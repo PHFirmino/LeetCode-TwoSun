@@ -10,23 +10,22 @@ var twoSum = function(nums, target) {
     for(let i = 0; i < nums.length; i++){
         let repeatNum = false;
 
-        if(nums[i] < target){
-            for(let j = 0; j < numbersLessThanTarget.length; j++){
-                if(numbersLessThanTarget.lenght > 0){
-                    if(numbersLessThanTarget[j].value == nums[i]){
-                        repeatNum = true;
-                        break;
-                    }
+        for(let j = 0; j < numbersLessThanTarget.length; j++){
+            if(numbersLessThanTarget.lenght > 0){
+                if(numbersLessThanTarget[j].value == nums[i]){
+                    repeatNum = true;
+                    break;
                 }
             }
-
-            if(repeatNum == false){
-                numbersLessThanTarget.push({
-                    position: i,
-                    value: nums[i]
-                });
-            }
         }
+
+        if(repeatNum == false){
+            numbersLessThanTarget.push({
+                position: i,
+                value: nums[i]
+            });
+        }
+        
     }
 
     for(let i = 0; i < numbersLessThanTarget.length; i++){
